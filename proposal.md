@@ -1,4 +1,4 @@
-# Destructuring
+# Spaceship Operator
 
 ## Contact information
 
