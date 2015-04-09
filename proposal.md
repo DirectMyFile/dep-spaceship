@@ -62,7 +62,9 @@ spaceshipExpression:
 
 ### A working implementation
 
-No working implementation is available, although one can experience this syntax in practice by using languages that have this feature already, such as [Groovy](http://docs.groovy-lang.org/latest/html/documentation/index.html#_spaceship_operator).
+There is an implementation of a rewriter that converts `LEFT <=> RIGHT` into `LEFT.compareTo(RIGHT)`:
+
+https://github.com/DirectMyFile/dep-spaceship/tree/master/rewriter
 
 ### Tests
 
