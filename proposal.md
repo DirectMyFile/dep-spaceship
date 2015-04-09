@@ -12,13 +12,13 @@
 
 ## Summary
 
-Add Spaceship Operator for Comparing Values
+Add Spaceship Operator for Comparing Values. This would be a binary operator with the token `<=>`
 
 ## Motivation
 
 Problems to solve:
 
-- Calling compareTo() on objects is often annoying. It looks ugly often. What if we had an operator that was for comparison like this, but was syntatic sugar for compareTo() and has a clearly defined intention.
+- Calling compareTo() on objects is often annoying. It looks ugly often. What if we had an operator that was for comparison like this, but was syntactic sugar for compareTo() and has a clearly defined intention.
 
 ## Examples
 
@@ -31,7 +31,7 @@ assert(("a" <=> "z") == -1);
 
 ## Proposal
 
-The spaceship operator is a binary operator. It is not allowed to be used in assignment.
+The spaceship operator is a binary operator. It is not allowed to be used in compound assignment.
 
 ### Semantics
 
@@ -47,18 +47,31 @@ No alternatives have been proposed yet.
 
 ## Implications and limitations
 
-None
+- This operator is not overridable, because of the usage of `Comparable` and `compareTo`.
 
 ## Deliverables
 
 ### Language specification changes
 
-#### 16.xx Spaceship Expression
+#### 10.1.1 Operators
+
+The beginning of this section up to the binaryOperator definition is unchanged.
 
 ```
-spaceshipExpression:
-  logicalOrExpression ‘<=>’ logicalOrExpression
+binaryOperator:
+  multiplicativeOperator |
+  additiveOperator |
+  shiftOperator |
+  relationalOperator |
+  ‘==’ |
+  ‘<=>’ |
+  bitwiseOperator
+;
 ```
+
+Expression of the form `a <=> b` is equivalent to `a.compareTo(b)`.
+
+Rest of second 10.1.1 is unchanged.
 
 ### A working implementation
 
