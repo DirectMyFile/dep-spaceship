@@ -1,1 +1,1 @@
-main() => print(5.compareTo(10));
+main() {print(5.compareTo(10)); print(2.compareTo(1)); print(2.compareTo(2));}
