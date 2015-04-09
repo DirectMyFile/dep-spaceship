@@ -1,0 +1,5 @@
+name: spaceship_rewriter
+description: Rewrite Spaceship Operators
+dependencies:
+  analyzer:
+    git: https://github.com/DirectMyFile/analyzer_spaceship.git
