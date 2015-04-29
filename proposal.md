@@ -71,7 +71,7 @@ binaryOperator:
 
 Expression of the form `a <=> b` is equivalent to `a.compareTo(b)`.
 
-Rest of second 10.1.1 is unchanged.
+Rest of section 10.1.1 is unchanged.
 
 ### A working implementation
 
